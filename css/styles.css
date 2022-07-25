@@ -127,6 +127,21 @@ body {
     color: var(--accent-color);
 }
 
+.link.current {
+    position: relative;
+}
+
+.link.current::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    background-color: var(--accent-color);
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+}
+
 .header-contacts {
     display: flex;
     margin-left: auto;
@@ -145,7 +160,6 @@ body {
 
 .header-contacts .link {
     color: var(--secondary-text-color);
-    /* text-decoration: none; */
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -155,12 +169,6 @@ body {
 .header-contacts .link:hover,
 .header-contacts .link:focus {
     color: var(--accent-color);
-}
-
-.header-contacts .link:hover .header-icon,
-.header-contacts .link:focus .header-icon{
-    color: var(--accent-color);
-    fill: var(--accent-color);
 }
 
 /* ------------------------ HERO --------------------- */
@@ -220,6 +228,55 @@ body {
 
     cursor: pointer;
 }
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    pointer-events: 1;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 528px;
+    height: 581px;
+    border-radius: 4px;
+    background-color: var(--primary-white-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--black-color);
+    background-color: var(--primary-white-color);
+}
+.close-icon {
+    fill: currentColor;
+}
+
 
 /* Section */
 
@@ -297,7 +354,7 @@ body {
     line-height: 1.7;
 }
 
-/* Efforts */
+/* -------------------- Efforts ---------------------- */
 
 .efforts-section {
     padding-top: 47px;
@@ -306,17 +363,35 @@ body {
 
 .efforts {
     display: flex;
+    gap: 30px;
 }
 
 .efforts-element {
-    margin-right: 30px;
+    position: relative;
 }
 
-.efforts-element:nth-last-child(-n + 1) {
-    margin-right: 0px;
+.efforts-about {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+
 }
 
-/* Our company */
+
+
+/*------------------ OUR COMPANY ----------------------- */
 
 .team-section {
     background-color: var(--grey-color);
@@ -375,25 +450,19 @@ body {
     margin-right: 10px;
     width: 44px;
     height: 44px;
-    background-color: var(--primary-white-color);
+    color: #AFB1B8;
     border-radius: 50%;
 }
 
 .social-icon {
-    fill: #AFB1B8;
+    fill: currentColor;
 }
 
 .social-link:hover,
 .social-link:focus {
+    color: var(--primary-white-color);
     background-color: var(--accent-color);
 }
-
-.social-link:hover .social-icon,
-.social-link:focus .social-icon {
-    background-color: var(--accent-color);
-    fill: var(--primary-white-color);
-}
-
 /* -------------------------CUSTOMERS------------------------------ */
 
 .customers-list{
@@ -410,6 +479,7 @@ body {
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4%;
+    color: #AFB1B8;
 }
 
 .customers-item:not(:last-child) {
@@ -419,16 +489,13 @@ body {
 .customers-link:hover,
 .customers-link:focus {
     border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .customers-icon {
-    fill: #AFB1B8;
+    fill: currentColor;
 }
 
-.customers-link:hover .customers-icon,
-.customers-link:focus .customers-icon {
-    fill: var(--accent-color);
-}
 
 /* Portfolio.css */
 
@@ -603,6 +670,7 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    color: var(--primary-white-color);
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -612,5 +680,5 @@ body {
 }
 
 .connection-icon {
-    fill: var(--primary-white-color);
+    fill: currentColor;
 }
