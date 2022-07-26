@@ -164,14 +164,15 @@ body {
 
 
 .header-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
     fill: currentColor;
 }
 
 .header-contacts .link {
     display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--secondary-text-color);
     font-weight: 500;
     font-size: 14px;
