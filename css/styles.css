@@ -82,6 +82,7 @@ body {
 
 .header {
     outline: 1px solid #ECECEC;
+    border: none;
 }
 
 .header-logo {
@@ -264,7 +265,7 @@ body {
 }
 
 .backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.5);
 }
 
 .modal {
@@ -287,8 +288,9 @@ body {
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    margin-top: 8px;
-    margin-right: 8px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
